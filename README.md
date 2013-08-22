@@ -9,7 +9,7 @@ CUJSONPHPFile
 
 ### example
 
-	http://localhost/ttt/command.php?path=test
+	http://localhost/CUJSONPHPFile/command.php?path=test
 	
 Out put
 
