@@ -13,7 +13,8 @@ CUJSONPHPFile
 
 	php markdown.php -s test
 	
-	![image](https://github.com/studentdeng/CUJSONPHPFile/blob/master/s1.png)
+
+![image](https://raw.github.com/studentdeng/CUJSONPHPFile/master/s1.png)
 
 ###php文件转成json
 
