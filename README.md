@@ -12,6 +12,8 @@ CUJSONPHPFile
 ###php文件转成markdown语言文档
 
 	php markdown.php -s test
+	
+	![image](https://github.com/studentdeng/CUJSONPHPFile/blob/master/s1.png)
 
 ###php文件转成json
 
