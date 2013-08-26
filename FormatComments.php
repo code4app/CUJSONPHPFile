@@ -57,7 +57,7 @@ class CUFormatComments
     public function getReturn()
     {
         $res = $this->doc->getTag('return');
-        if (count($res) != 1)
+        if (count($res) == 0)
         {
             return "";
         }
@@ -68,6 +68,10 @@ class CUFormatComments
     public function getLink()
     {
         $res = $this->doc->getTag('link');
+        if (count($res) == 0)
+        {
+            return "";
+        }
 
         return $res[0];  
     }
