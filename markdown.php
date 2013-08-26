@@ -28,7 +28,7 @@ if (isset($options['d']))
     $outPath = $options['d'];
 }
 
-$json = shell_exec('php ' . 'php_to_json.php ' . $path);
+$json = shell_exec('php ' . __DIR__. '/php_to_json.php ' . $path);
 $jsonValue = json_decode($json, TRUE);
 if (!empty($jsonValue['error']))
 {
@@ -78,7 +78,7 @@ function jsonToReadable($json)
     return $r;
 }
 
-function generateMarkDown($jsonValue, $outPath="")
+function generateMarkDown($jsonValue, $outPath = "")
 {
     $markDown = "";
     foreach ($jsonValue as $className => $methods)
@@ -130,7 +130,7 @@ function generateMarkDown($jsonValue, $outPath="")
 
                 $markDown .= "#### HTTP请求方式:\n";
                 $markDown .= "$httpMethod\n\n";
-                
+
                 $markDown .= "#### URL:\n\n";
                 if (!empty($result['link']))
                 {
@@ -170,7 +170,7 @@ function generateMarkDown($jsonValue, $outPath="")
                 $markDown .= "#### 返回结果:\n\n";
 
                 $json = jsonToReadable($result['return']);
-                if(!empty($json))
+                if (!empty($json))
                 {
                     $markDown .= '```json' . "\n\n";
                     $markDown .= $json;
@@ -186,18 +186,18 @@ function generateMarkDown($jsonValue, $outPath="")
             }
         }
     }
-    
+
     if (isset($outPath))
     {
-        file_put_contents($outPath.'/document.md', $markDown);
-        echo 'write to: '.$outPath.'/document.md'."\n";
-        chmod($outPath.'/document.md', 0777);
+        file_put_contents($outPath . '/document.md', $markDown);
+        echo 'write to: ' . $outPath . '/document.md' . "\n";
+        chmod($outPath . '/document.md', 0777);
     }
     else
     {
         file_put_contents('document.md', $markDown);
         chmod('document.md', 0777);
-        echo 'write to: document.md'."\n";
+        echo 'write to: document.md' . "\n";
     }
 }
 
